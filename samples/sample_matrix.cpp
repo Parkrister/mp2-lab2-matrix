@@ -12,7 +12,6 @@
 void main()
 {
   TVector<int> a(5), b(5), c(5);
-  int i, j;
 
   setlocale(LC_ALL, "Russian");
 
@@ -25,17 +24,38 @@ void main()
   cout << "a = " << a << '\n' << "b = " << b <<'\n';
   cout << "a+b = " << a + b << '\n' << "a*b = " << a * b;
 
-//  cout << "Тестирование программ поддержки представления треугольных матриц"
-//    << endl;
-//  for (i = 0; i < 5; i++)
-//    for (j = i; j < 5; j++ )
-//    {
-//      a[i][j] =  i * 10 + j;
-//      b[i][j] = (i * 10 + j) * 100;
-//    }
-//  c = a + b;
-//  cout << "Matrix a = " << endl << a << endl;
-//  cout << "Matrix b = " << endl << b << endl;
-//  cout << "Matrix c = a + b" << endl << c << endl;
+
+
+  cout << "\nТестирование программ поддержки представления треугольных матриц\n";
+
+  TMatrix<TVector<int>> x(5), y(5);
+  TMatrix<TVector<int>> z(2);
+
+  for (int i = 0; i < x.GetSize(); i++) {
+	  TVector<int> tmp(x[i].GetSize(), x[i].GetStartIndex());
+	  tmp = tmp + i;
+	  cout << tmp << endl;
+	  /*x[i] = tmp;*/
+  }
+
+  cout << x;
+  //for (int i = 0; i < x.GetSize(); i++) {
+	 // TVector<int> tmp(x[i].GetSize(), x[i].GetStartIndex());
+	 // tmp = tmp + i;
+	 // x[i] = x[i] + tmp;
+  //}
+
+  //cout << x;
+
+  //for (i = 0; i < 5; i++)
+  //  for (j = i; j < 5; j++ )
+  //  {
+  //    x[i][j] =  i * 10 + j;
+  //    y[i][j] = (i * 10 + j) * 100;
+  //  }
+  //z = x + y;
+  //cout << "Matrix a = " << endl << x << endl;
+  //cout << "Matrix b = " << endl << y << endl;
+  //cout << "Matrix c = a + b" << endl << z << endl;
 }
 //---------------------------------------------------------------------------
