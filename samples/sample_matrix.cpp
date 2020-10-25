@@ -15,6 +15,22 @@ void main()
 
   setlocale(LC_ALL, "Russian");
 
+  TVector<int> w(3);
+  for (int i = 0; i < 3; i++) {
+	  w[i] = i + 1;
+  }
+
+  TVector<int> q(3);
+  for (int i = 0; i < 3; i++) {
+	  q[i] = 2 * (i + 1);
+  }
+
+  int res = w * q;
+
+  cout << res;
+  return;
+
+
   for (int i = 0; i < a.GetSize(); i++) {
 	  a[i] = i;
   }
