@@ -238,6 +238,7 @@ public:
   }
 };
 
+
 template <class ValType>
 TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s)
 {

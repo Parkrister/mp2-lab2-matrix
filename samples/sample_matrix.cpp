@@ -7,13 +7,20 @@
 
 #include <iostream>
 #include "utmatrix.h"
+#include <Windows.h>
+HANDLE nConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
 //---------------------------------------------------------------------------
 
 void main()
 {
-  TVector<int> a(5), b(5), c(5);
+	SetConsoleTextAttribute(nConsole, 15);
+
+	TVector<int> a(5), b(5), c(5);
 
   setlocale(LC_ALL, "Russian");
+  cout << "\nТестирование программ поддержки представления векторов\n";
+
 
   for (int i = 0; i < a.GetSize(); i++) {
 	  a[i] = i;
@@ -26,19 +33,19 @@ void main()
 
 
 
-  cout << "\nТестирование программ поддержки представления треугольных матриц\n";
+  //cout << "\nТестирование программ поддержки представления треугольных матриц\n";
 
   TMatrix<TVector<int>> x(5), y(5);
   TMatrix<TVector<int>> z(2);
 
-  for (int i = 0; i < x.GetSize(); i++) {
-	  TVector<int> tmp(x[i].GetSize(), x[i].GetStartIndex());
-	  tmp = tmp + i;
-	  cout << tmp << endl;
-	  /*x[i] = tmp;*/
-  }
 
-  cout << x;
+  //for (int i = 0; i < x.GetSize(); i++) {
+	 // TVector<int> tmp(x[i].GetSize(), x[i].GetStartIndex());
+	 // tmp = tmp + i;
+	 // cout << tmp << endl;
+	 // x[i] = tmp;
+  //}
+
   //for (int i = 0; i < x.GetSize(); i++) {
 	 // TVector<int> tmp(x[i].GetSize(), x[i].GetStartIndex());
 	 // tmp = tmp + i;
